@@ -15,6 +15,6 @@ public class MainActivity extends AppCompatActivity {
          EditText txt_usuario=(EditText)findViewById(R.id.txt_usuario);
          EditText txt_password=(EditText)findViewById(R.id.txt_password);
         ImageButton sing=(ImageButton)findViewById(R.id.singup);
-        
+
     }
 }
