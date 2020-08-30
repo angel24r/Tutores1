@@ -91,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
                     login_progress.setVisibility(View.INVISIBLE);
                 }
 
+
             }
             });
 
