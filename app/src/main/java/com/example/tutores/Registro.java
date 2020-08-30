@@ -211,7 +211,7 @@ public class Registro extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(),Materias.class);
+        Intent homeActivity = new Intent(getApplicationContext(),Entrada.class);
         startActivity(homeActivity);
         finish();
 
@@ -267,7 +267,7 @@ public class Registro extends AppCompatActivity {
             // the user has successfully picked an image
             // we need to save its reference to a Uri variable
             pickedImgUri = data.getData() ;
-            ImgUserPhoto.setImageURI(pickedImgUri);
+                ImgUserPhoto.setImageURI(pickedImgUri);
 
 
         }

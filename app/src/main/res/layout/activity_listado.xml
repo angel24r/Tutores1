@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Entrada">
-
+    tools:context=".Listado">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
@@ -15,13 +14,14 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
-        <ImageView
+        <TextView
             android:id="@+id/textMaterias"
-            android:layout_width="221dp"
-            android:layout_height="37dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginTop="12dp"
-            android:src="@drawable/logoo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Selecciona una materia"
+            android:textColor="@color/colorWhite"
             android:textSize="25sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,41 +38,59 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textMaterias" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/white_rec"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagmenu">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                tools:ignore="Suspicious0dp" />
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/imagview"
         android:layout_width="391dp"
         android:layout_height="481dp"
-        app:layout_constraintBottom_toTopOf="@+id/boton"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layoutHeader"
-        app:srcCompat="@drawable/esta"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/estados"
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/boton"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="36dp"
+        android:id="@+id/re"
+        android:layout_width="83dp"
+        android:layout_height="93dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/boton"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/exit"
-        android:layout_width="74dp"
-        android:layout_height="95dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/boton"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagview"
-        app:layout_constraintVertical_bias="0.766"
-        app:srcCompat="@drawable/atras" />
-
-
+        app:layout_constraintVertical_bias="0.737"
+        app:srcCompat="@drawable/atras"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

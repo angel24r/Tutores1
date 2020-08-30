@@ -94,13 +94,15 @@
             app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/layoutmate"
             app:layout_constraintTop_toTopOf="parent">
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                android:contentDescription="@string/app_name"
-                android:padding="8dp"
-                android:src="@drawable/leoye"/>
+
+                <ImageView
+                    android:id="@+id/espanol"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="8dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="8dp"
+                    android:src="@drawable/leoye" />
         </LinearLayout>
             <LinearLayout
                 android:id="@+id/layoutmate"
@@ -115,13 +117,15 @@
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
+
                 <ImageView
+                    android:id="@+id/mate"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/algebra"/>
+                    android:src="@drawable/algebra" />
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/layoutciencias"
@@ -136,13 +140,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/layoutmate"
                 app:layout_constraintTop_toBottomOf="@id/layoutespa">
+
                 <ImageView
+                    android:id="@+id/ciencias"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/ciencias"/>
+                    android:src="@drawable/ciencias" />
             </LinearLayout>
 
             <LinearLayout
@@ -158,14 +164,17 @@
                 app:layout_constraintDimensionRatio="H, 1:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layoutmate">
+
                 <ImageView
+                    android:id="@+id/negocios"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/negocios"/>
+                    android:src="@drawable/negocios" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/layouthumanidades"
                 android:layout_width="0dp"
@@ -176,17 +185,31 @@
                 android:orientation="vertical"
                 android:padding="15dp"
                 app:layout_constraintDimensionRatio="H, 1:1"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/layoutmate"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layoutciencias">
+
                 <ImageView
+                    android:id="@+id/humanidades"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_margin="8dp"
                     android:contentDescription="@string/app_name"
                     android:padding="8dp"
-                    android:src="@drawable/humanidades"/>
+                    android:src="@drawable/humanidades" />
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/re2"
+                android:layout_width="102dp"
+                android:layout_height="85dp"
+                android:layout_marginStart="307dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/layouthumanidades"
+                app:layout_constraintTop_toBottomOf="@+id/layoutnegocios"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/atras" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

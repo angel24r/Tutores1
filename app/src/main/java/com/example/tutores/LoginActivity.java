@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,11 +30,20 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        ImageButton facebook=(ImageButton)findViewById(R.id.btnFacebook);
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri=Uri.parse("https://www.facebook.com/GG-Code-109811224156949/");
+                Intent intent = new Intent (Intent.ACTION_VIEW,uri);
+                startActivity(intent);
+            }
+        });
         txt_usuario=findViewById(R.id.txt_usuario);
         txt_password=findViewById(R.id.txt_password);
         btnlogin=findViewById(R.id.btnlogin);
@@ -96,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void updateUI() {
-        Intent Homebb=new Intent(getApplicationContext(),Materias.class);
+        Intent Homebb=new Intent(getApplicationContext(),Entrada.class);
         startActivity(Homebb);
         finish();
 
@@ -114,7 +124,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser User=mAuth.getCurrentUser();
         if(User !=null){
-            Intent Homebb=new Intent(getApplicationContext(),Materias.class);
+            Intent Homebb=new Intent(getApplicationContext(),Entrada.class);
             startActivity(Homebb);
             finish();
         }
