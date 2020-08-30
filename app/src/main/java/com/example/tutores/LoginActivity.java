@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
     private  EditText txt_usuario,txt_password;
     private Button btnlogin;
-    private ProgressBar loginProgress;
+    private ProgressBar login_progress;
     private FirebaseAuth mAuth;
     private Intent Home;
     private ImageView LoginPhoto;
@@ -33,12 +33,14 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         txt_usuario=findViewById(R.id.txt_usuario);
         txt_password=findViewById(R.id.txt_password);
         btnlogin=findViewById(R.id.btnlogin);
         mAuth=FirebaseAuth.getInstance();
         Home=new Intent(this, com.example.tutores.Home.class);
         LoginPhoto=findViewById(R.id.singup);
+        login_progress=findViewById(R.id.login_progress);
         LoginPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginProgress.setVisibility(View.VISIBLE);
+
+                login_progress.setVisibility(View.VISIBLE);
                 btnlogin.setVisibility(View.INVISIBLE);
                 final String mail=txt_usuario.getText().toString();
                 final String password=txt_password.getText().toString();
@@ -61,10 +64,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (mail.isEmpty() || password.isEmpty()){
                     showMesagge("Verifique su informacion");
                     btnlogin.setVisibility(View.VISIBLE);
-                    loginProgress.setVisibility(View.INVISIBLE);
+                    login_progress.setVisibility(View.INVISIBLE);
                 }
                 else
                 {
+
                     signIn(mail,password);
 
                 }
@@ -77,12 +81,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    loginProgress.setVisibility(View.INVISIBLE);
+                    login_progress.setVisibility(View.INVISIBLE);
                     btnlogin.setVisibility(View.VISIBLE);
                     updateUI();
 
                 }else{
                     showMesagge(task.getException().getMessage());
+                    btnlogin.setVisibility(View.VISIBLE);
+                    login_progress.setVisibility(View.INVISIBLE);
                 }
 
             }
