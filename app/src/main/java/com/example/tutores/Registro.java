@@ -211,7 +211,7 @@ public class Registro extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent homeActivity = new Intent(getApplicationContext(),Home.class);
+        Intent homeActivity = new Intent(getApplicationContext(),Materias.class);
         startActivity(homeActivity);
         finish();
 

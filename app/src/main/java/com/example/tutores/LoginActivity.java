@@ -38,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         txt_password=findViewById(R.id.txt_password);
         btnlogin=findViewById(R.id.btnlogin);
         mAuth=FirebaseAuth.getInstance();
-        Home=new Intent(this, com.example.tutores.Home.class);
         LoginPhoto=findViewById(R.id.singup);
         login_progress=findViewById(R.id.login_progress);
         LoginPhoto.setOnClickListener(new View.OnClickListener() {
@@ -91,14 +90,14 @@ public class LoginActivity extends AppCompatActivity {
                     login_progress.setVisibility(View.INVISIBLE);
                 }
 
-
             }
             });
 
     }
 
     private void updateUI() {
-        startActivity(Home);
+        Intent Homebb=new Intent(getApplicationContext(),Materias.class);
+        startActivity(Homebb);
         finish();
 
 
@@ -115,7 +114,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser User=mAuth.getCurrentUser();
         if(User !=null){
-            updateUI();
+            Intent Homebb=new Intent(getApplicationContext(),Materias.class);
+            startActivity(Homebb);
+            finish();
         }
 
     }
