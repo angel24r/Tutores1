@@ -34,6 +34,6 @@
 Logo:
 
 ![](https://github.com/angel24r/Tutores1/blob/master/app/src/main/res/drawable/tutores.png)
-
+![](https://github.com/angel24r/Tutores1/blob/master/app/src/main/res/drawable/imagenfon.jpg)
 
 ###End
